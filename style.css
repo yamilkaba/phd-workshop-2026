@@ -90,10 +90,17 @@ h2 {
 .upcoming h2 { color: var(--muted); }
 .info { align-self: center; }
 
-.links { margin: 0; align-self: center; display: flex; flex-wrap: wrap; font-size: 15px; font-weight: 700; }
-.links a { color: var(--title); text-decoration: none; }
-.links a:hover, .links a:focus { text-decoration: underline; }
-.links a + a::before { content: "\00b7"; color: var(--accent); margin: 0 10px; display: inline-block; text-decoration: none; }
+.links { margin: 0; align-self: center; display: flex; flex-direction: column; gap: 6px; width: 104px; font-size: 14px; font-weight: 700; }
+.links a {
+  display: block;
+  padding: 5px 12px;
+  text-align: center;
+  color: var(--title);
+  text-decoration: none;
+  border: 1.5px solid var(--accent);
+  border-radius: 999px;
+}
+.links a:hover, .links a:focus { background: var(--box-bg); border-color: var(--box-bg); color: var(--box-text); }
 
 @media (max-width: 560px) {
   h1 { font-size: 34px; }
@@ -101,6 +108,7 @@ h2 {
   .topic { grid-template-columns: 150px 1fr; row-gap: 8px; padding: 14px; }
   .dates { grid-row: 1 / span 2; }
   .info { align-self: end; }
-  .links { grid-column: 2; align-self: start; }
+  .links { grid-column: 2; align-self: start; flex-direction: row; flex-wrap: wrap; width: auto; }
+  .links a { padding: 5px 14px; }
   h2 { font-size: 19px; }
 }
