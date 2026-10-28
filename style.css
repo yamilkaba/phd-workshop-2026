@@ -105,10 +105,12 @@ h2 {
 @media (max-width: 560px) {
   h1 { font-size: 34px; }
   .eyebrow { font-size: 14px; letter-spacing: 0.16em; }
-  .topic { grid-template-columns: 150px 1fr; row-gap: 8px; padding: 14px; }
-  .dates { grid-row: 1 / span 2; }
-  .info { align-self: end; }
-  .links { grid-column: 2; align-self: start; flex-direction: row; flex-wrap: wrap; width: auto; }
-  .links a { padding: 5px 14px; }
+  .topic { grid-template-columns: minmax(0, 1fr); row-gap: 12px; padding: 14px; }
+  .dates { flex-direction: row; flex-wrap: wrap; }
+  .datebox { flex: 1 1 140px; }
+  .info { align-self: start; }
+  .links { align-self: start; flex-direction: row; flex-wrap: wrap; width: auto; }
+  .links:empty { display: none; }
+  .links a { padding: 5px 16px; }
   h2 { font-size: 19px; }
 }
